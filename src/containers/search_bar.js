@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreator } from 'redux';
+import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
 
-
-export default class SearchBar extends Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props);
 
     this.state = {term: ''};
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   onInputChange(event) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     this.setState({term: event.target.value})
   }
 
   onFormSubmit(event){
     event.preventDefault();
+    //we need to go and fetch weather data
+    this.props.fetchWeather(this.state.term);
+    this.setState({term: ''});
   }
 
   render() {
@@ -37,3 +40,18 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+function mapDispatchToProps (dispatch) {
+  // the first argument in bindActionCreator causes the action creator, whenever gets called and returns an
+  // action bind action creator with dispatch, make sure that action flows down to middleware and to reducers
+  return bindActionCreators({ fetchWeather }, dispatch);
+}
+
+//mapDispatchToProps should always be the 2nd argument in connect and that is the only reason of the null
+//in first argument
+export default connect(null, mapDispatchToProps)(SearchBar);
+
+
+
+
+
