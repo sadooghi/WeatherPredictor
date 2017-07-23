@@ -43,7 +43,7 @@ class WeatherList extends Component {
 }
 
 function mapStateToProps ({ weather }) {
-// havind {weather} as input is the same as having state as input and then define:
+// having {weather} as input is the same as having state as input and then define:
 // const weather = state.weather
   return { weather };
 }

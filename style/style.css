@@ -1,17 +1,75 @@
+body {
+  background-color: #ecf0f1 !important;
+}
+
 td, th {
   vertical-align: middle !important;
   text-align: center !important;
 }
 
 .input-group{
-  margin: 20px 0px;
+  margin: 40px;
 }
 
 svg {
   height: 150px;
 }
 
+.logo{
+  color: white;
+  font-size: 22px !important;
+  margin-top: 10px;
+  margin-right: 3px;
+  float: left;
+  margin-left: 12px;
+}
+
 td:first-of-type, td:first-of-type > div {
   height: 200px;
   width: 250px;
+}
+
+.btn{
+  font-weight: 600 !important;
+  color: white !important;
+  background-color: #2ecc71 !important;
+  border-color: #2ecc71 !important;
+}
+
+.form-control {
+  border: 1px solid #2ecc71 !important;
+}
+
+.table {
+  margin-left: 40px;
+  width: 94% !important;
+  background-color: white !important;
+}
+
+.navbar {
+  background: #2ecc71;
+  height: 60px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+.navbar-brand {
+  color: white;
+  display: block;
+  float: left;
+  font-weight: 700;
+  font-size: 28px;
+  height: 60px;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
 }
